@@ -899,7 +899,7 @@ function displaySystemStatus() {
   const aiEmoji = aiIntegration && aiIntegration.isEnabled() ? '✅' : '❌';
   statusItems.push(`AI ${aiEmoji}`);
   
-  // Database
+  // Database & Registration
   const dbEmoji = db ? '✅' : '❌';
   statusItems.push(`Database ${dbEmoji}`);
   
@@ -914,6 +914,18 @@ function displaySystemStatus() {
   // Chat Bridge
   const chatEmoji = !config["disable-chatmsgs"] ? '✅' : '❌';
   statusItems.push(`Chat Bridge ${chatEmoji}`);
+  
+  // Join/Leave Messages
+  const joinLeaveEmoji = !config["disable-join-leave-gmsgs"] ? '✅' : '❌';
+  statusItems.push(`Join/Leave ${joinLeaveEmoji}`);
+  
+  // Private Chat
+  const privateChatEmoji = config["show-private-chat"] ? '✅' : '❌';
+  statusItems.push(`Private Chat ${privateChatEmoji}`);
+  
+  // Link Filtering
+  const linkFilterEmoji = !config["allow-links-from-game"] ? '✅' : '❌';
+  statusItems.push(`Link Filter ${linkFilterEmoji}`);
   
   // Admin Commands
   const execEmoji = config["allow-exec-command"] ? '⚠️' : '✅';
