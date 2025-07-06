@@ -1,6 +1,6 @@
 # 🤖👑 Dishorde - Red Queen Edition
 
-![Red Queen Banner](banner.jpg)
+![Red Queen Banner](/readme/banner.jpg)
 
 **A Discord bridge bot for 7 Days to Die with AI integration, comprehensive admin commands, and a dark personality twist.**
 
@@ -257,7 +257,7 @@ This modified version includes AI integration and enhanced features. Use at your
 
 ---
 
-![Red Queen Avatar](avatar.png)
+![Red Queen Avatar](/readme/avatar.png)
 
 *"Welcome to my domain. Try not to disappoint me."* - Red Queen AI
 
