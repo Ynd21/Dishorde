@@ -39,66 +39,66 @@ This is a heavily modified version of Dishorde with AI integration and enhanced 
 ### 🔧 **Public Commands**
 | Command | Description | Example |
 |---------|-------------|---------|
-| `/7dhelp` | 📚 Show all available commands | `/7dhelp` |
-| `/7dinfo` | ℹ️ Show server connection status | `/7dinfo` |
-| `/7dtime` | 🕐 Get current game time and horde info | `/7dtime` |
-| `/7dversion` | 📋 Show game version | `/7dversion` |
-| `/7dplayers` | 👥 List online players | `/7dplayers` |
-| `/7dweather` | 🌤️ Check current weather | `/7dweather` |
-| `/7dregister` | 🔐 Register your Discord account | `/7dregister code:123456` |
-| `/7dplayerinfo` | 👤 Get your player statistics | `/7dplayerinfo` |
+| `/7dhelp` | ❓ Shows all available commands and their descriptions | `/7dhelp` |
+| `/7dinfo` | ℹ️ Get info about the bot | `/7dinfo` |
+| `/7dtime` | 🕐 Shows the current game time and date | `/7dtime` |
+| `/7dversion` | 📋 Shows the game version | `/7dversion` |
+| `/7dplayers` | 👥 Shows a list of online players | `/7dplayers` |
+| `/7dweather` | 🌤️ Shows current weather information across all biomes | `/7dweather` |
+| `/7dregister` | 🔗 Register your Discord account with your in-game account using a registration code | `/7dregister code:123456` |
+| `/7dplayerinfo` | 👤 Shows your player registration information | `/7dplayerinfo` |
 
 ### ⚡ **Admin Commands**
 | Command | Description | Example |
 |---------|-------------|---------|
-| `/7dkick` | 👢 Kick a player | `/7dkick player:Josh` |
-| `/7dban` | 🔨 Ban a player | `/7dban player:Josh reason:Cheating` |
-| `/7dunban` | ✅ Unban a player | `/7dunban player:Josh` |
-| `/7dbanlist` | 📜 Show banned players | `/7dbanlist` |
+| `/7dai` | 🤖 Toggle AI integration on/off | `/7dai action:enable` |
+| `/7dban` | 🔨 Bans a player from the game server | `/7dban player:Josh reason:Cheating` |
+| `/7dbanlist` | 📋 Shows a list of banned players | `/7dbanlist` |
+| `/7dexec` | ⚡ Executes a raw command on the telnet server | `/7dexec command:"say Hello"` |
+| `/7dgive` | 🎁 Give items to a player | `/7dgive player:Josh item:pistol quantity:1 quality:6` |
+| `/7dkick` | 👢 Kicks a player from the game server | `/7dkick player:Josh` |
 | `/7dkill` | 💀 Kill a player | `/7dkill player:Josh` |
-| `/7dteleport` | 🌐 Teleport player | `/7dteleport player:Josh target:100,50,200` |
-| `/7dgive` | 🎁 Give items to player | `/7dgive player:Josh item:pistol quantity:1 quality:6` |
-| `/7dwhitelist` | 🔒 Manage whitelist | `/7dwhitelist add player:Josh` |
-| `/7dspawn` | 🧟 Spawn entities | `/7dspawn entity type:zombieDog player:Josh count:5` |
-| `/7dweathercontrol` | 🌩️ Control weather | `/7dweathercontrol set type:storm` |
-| `/7dstatus` | 📊 Bot status management | `/7dstatus next:True` |
-| `/7dstatusrotate` | 🔄 Toggle status rotation | `/7dstatusrotate enable:True` |
-| `/7dsetchannel` | 📢 Set chat channel | `/7dsetchannel channel:#game-chat` |
-| `/7dsaveworld` | 💾 Save the world | `/7dsaveworld` |
-| `/7dexec` | ⚙️ Execute console command | `/7dexec command:"say Hello"` |
-| `/7dwalkersim` | 🚶 Walker simulation | `/7dwalkersim enable:True` |
-| `/7dai` | 🤖 AI system control | `/7dai reload` |
+| `/7dsaveworld` | 💾 Saves the world | `/7dsaveworld` |
+| `/7dsetchannel` | 📺 Sets the channel for the server chat | `/7dsetchannel channel:#game-chat` |
+| `/7dspawn` | 🧟 Spawn entities, airdrops, or supply crates | `/7dspawn entity type:zombieDog player:Josh count:5` |
+| `/7dstatus` | 🎭 Set bot status and activity type | `/7dstatus next:True` |
+| `/7dstatusrotate` | 🛡️ Toggle status rotation on/off | `/7dstatusrotate enable:True` |
+| `/7dteleport` | 🌀 Teleport a player to coordinates or to another player | `/7dteleport player:Josh target:100,50,200` |
+| `/7dunban` | 🔓 Unbans a player from the game server | `/7dunban player:Josh` |
+| `/7dwalkersim` | 🧟 Shows walker simulation statistics and information | `/7dwalkersim` |
+| `/7dweathercontrol` | 🌤️ Control and view weather conditions | `/7dweathercontrol set type:storm` |
+| `/7dwhitelist` | 🔒 Manage server whitelist | `/7dwhitelist add player:Josh` |
 
 ## 📖 **Detailed Command Reference**
 
 ### 🔧 **Public Commands**
-- **`/7dhelp`** - Shows all available commands with descriptions
-- **`/7dinfo`** - Displays bot connection status and version info
-- **`/7dtime`** - Shows current game time and blood moon horde countdown
-- **`/7dversion`** - Displays game server version
-- **`/7dplayers`** - Lists all currently online players
-- **`/7dweather`** - Comprehensive weather report for all biomes
-- **`/7dregister code:123456`** - Links your Discord account to your game profile
-- **`/7dplayerinfo`** - Shows your registration details and play statistics
+- **`/7dhelp`** - Shows all available commands and their descriptions
+- **`/7dinfo`** - Get info about the bot
+- **`/7dtime`** - Shows the current game time and date
+- **`/7dversion`** - Shows the game version
+- **`/7dplayers`** - Shows a list of online players
+- **`/7dweather`** - Shows current weather information across all biomes
+- **`/7dregister code:123456`** - Register your Discord account with your in-game account using a registration code
+- **`/7dplayerinfo`** - Shows your player registration information
 
 ### ⚡ **Admin Commands**
-- **`/7dkick player:Josh`** - Kicks a player from the server
-- **`/7dban player:Josh reason:Cheating`** - Bans a player (reason optional)
-- **`/7dunban player:Josh`** - Removes a ban from a player
-- **`/7dbanlist`** - Shows all currently banned players
-- **`/7dkill player:Josh`** - Kills a player with public announcement
-- **`/7dteleport player:Josh target:100,50,200`** - Teleports player to coordinates or another player
-- **`/7dgive player:Josh item:pistol quantity:1 quality:6`** - Gives items to a player
-- **`/7dwhitelist add|remove|list|enable|disable player:Josh`** - Manages server whitelist
-- **`/7dspawn entity type:zombieDog player:Josh count:5`** - Spawns zombies, animals, airdrops, or supply crates
-- **`/7dweathercontrol set type:storm`** - Controls weather conditions and temperature
-- **`/7dstatus next:True`** - Manages bot status and manually rotates status
-- **`/7dstatusrotate enable:True`** - Enables/disables automatic status rotation
-- **`/7dsetchannel channel:#game-chat`** - Sets the Discord channel for game chat
-- **`/7dsaveworld`** - Forces a world save
-- **`/7dexec command:"say Hello"`** - Executes raw console commands (if enabled)
-- **`/7dwalkersim enable:True`** - Manages walker simulation
-- **`/7dai reload`** - Controls AI system (reload, status, etc.)
+- **`/7dai action:enable`** - Toggle AI integration on/off
+- **`/7dban player:Josh reason:Cheating`** - Bans a player from the game server
+- **`/7dbanlist`** - Shows a list of banned players
+- **`/7dexec command:"say Hello"`** - Executes a raw command on the telnet server
+- **`/7dgive player:Josh item:pistol quantity:1 quality:6`** - Give items to a player
+- **`/7dkick player:Josh`** - Kicks a player from the game server
+- **`/7dkill player:Josh`** - Kill a player
+- **`/7dsaveworld`** - Saves the world
+- **`/7dsetchannel channel:#game-chat`** - Sets the channel for the server chat
+- **`/7dspawn entity type:zombieDog player:Josh count:5`** - Spawn entities, airdrops, or supply crates
+- **`/7dstatus next:True`** - Set bot status and activity type
+- **`/7dstatusrotate enable:True`** - Toggle status rotation on/off
+- **`/7dteleport player:Josh target:100,50,200`** - Teleport a player to coordinates or to another player
+- **`/7dunban player:Josh`** - Unbans a player from the game server
+- **`/7dwalkersim`** - Shows walker simulation statistics and information
+- **`/7dweathercontrol set type:storm`** - Control and view weather conditions
+- **`/7dwhitelist add player:Josh`** - Manage server whitelist
 
 ### 🎯 **Command Features**
 - **Autocomplete**: Player names auto-suggest for relevant commands

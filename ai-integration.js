@@ -115,7 +115,7 @@ class AIIntegration {
                 headers: {
                     'Authorization': `Bearer ${this.apiKey}`,
                     'Content-Type': 'application/json',
-                    'HTTP-Referer': 'https://github.com/your-repo/dishorde',
+                    'HTTP-Referer': 'https://github.com/Ynd21/Dishorde/',
                     'X-Title': '7DTD Discord Bot'
                 }
             });
