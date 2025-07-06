@@ -132,6 +132,41 @@ This is a heavily modified version of Dishorde with AI integration and enhanced 
 - **Rich Embeds**: Beautiful formatted responses
 - **Error Handling**: Graceful failure recovery
 
+## 🔐 **Player Registration System**
+
+The Red Queen Edition includes a comprehensive player registration system that links Discord accounts to in-game profiles. This enables features like player statistics, welcome messages, and enhanced tracking.
+
+### 📋 **How to Register**
+
+**Step 1: In-Game Registration**
+1. Join the 7 Days to Die server
+2. Open chat and type: `!register`
+3. The bot will send you a **6-digit code** via private message in-game
+4. Remember this code (you have 30 minutes to use it)
+
+**Step 2: Discord Registration**
+1. Go to your Discord server where the bot is active
+2. Use the slash command: `/7dregister code:123456` (replace with your actual code)
+3. The bot will confirm your registration and link your accounts
+
+### ✅ **Registration Benefits**
+- **Player Statistics**: View your playtime, currency, and activity with `/7dplayerinfo`
+- **Welcome Messages**: Get personalized (sarcastic) greetings when you join
+- **Enhanced Tracking**: Your sessions and activities are tracked in the database
+- **Future Features**: Registration enables additional bot features and commands
+
+### 🔧 **Technical Details**
+- **Codes expire** after 30 minutes for security
+- **Steam ID linking**: Automatically captures your Steam and Epic/EOS IDs
+- **Database storage**: Securely stores registration data locally
+- **One-time process**: Registration only needs to be done once per player
+
+### 🚨 **Troubleshooting**
+- **Code not working?** Make sure you're using the exact 6-digit number
+- **Code expired?** Type `!register` in-game again to get a new code
+- **Already registered?** The bot will tell you if your account is already linked
+- **No code received?** Check if the bot is connected and telnet is working
+
 ## 🔧 **Installation**
 
 ### Prerequisites
