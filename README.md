@@ -46,28 +46,66 @@ This is a heavily modified version of Dishorde with AI integration and enhanced 
 | `/7dplayers` | 👥 List online players | `/7dplayers` |
 | `/7dweather` | 🌤️ Check current weather | `/7dweather` |
 | `/7dregister` | 🔐 Register your Discord account | `/7dregister code:123456` |
-| `/7dplayerinfo` | 👤 Get player statistics | `/7dplayerinfo player:Josh` |
+| `/7dplayerinfo` | 👤 Get your player statistics | `/7dplayerinfo` |
 
 ### ⚡ **Admin Commands**
 | Command | Description | Example |
 |---------|-------------|---------|
-| `/7dkick` | 👢 Kick a player | `/7dkick player:Josh reason:Griefing` |
+| `/7dkick` | 👢 Kick a player | `/7dkick player:Josh` |
 | `/7dban` | 🔨 Ban a player | `/7dban player:Josh reason:Cheating` |
 | `/7dunban` | ✅ Unban a player | `/7dunban player:Josh` |
 | `/7dbanlist` | 📜 Show banned players | `/7dbanlist` |
 | `/7dkill` | 💀 Kill a player | `/7dkill player:Josh` |
-| `/7dteleport` | 🌐 Teleport player | `/7dteleport player:Josh x:100 y:50 z:200` |
-| `/7dgive` | 🎁 Give items to player | `/7dgive player:Josh item:pistol count:1` |
+| `/7dteleport` | 🌐 Teleport player | `/7dteleport player:Josh target:100,50,200` |
+| `/7dgive` | 🎁 Give items to player | `/7dgive player:Josh item:pistol quantity:1 quality:6` |
 | `/7dwhitelist` | 🔒 Manage whitelist | `/7dwhitelist add player:Josh` |
-| `/7dspawn` | 🧟 Spawn entities | `/7dspawn zombies player:Josh count:5` |
-| `/7dweathercontrol` | 🌩️ Control weather | `/7dweathercontrol set condition:storm` |
+| `/7dspawn` | 🧟 Spawn entities | `/7dspawn entity type:zombieDog player:Josh count:5` |
+| `/7dweathercontrol` | 🌩️ Control weather | `/7dweathercontrol set type:storm` |
 | `/7dstatus` | 📊 Bot status management | `/7dstatus next:True` |
 | `/7dstatusrotate` | 🔄 Toggle status rotation | `/7dstatusrotate enable:True` |
 | `/7dsetchannel` | 📢 Set chat channel | `/7dsetchannel channel:#game-chat` |
 | `/7dsaveworld` | 💾 Save the world | `/7dsaveworld` |
-| `/7dexec` | ⚙️ Execute console command | `/7dexec command:say Hello` |
+| `/7dexec` | ⚙️ Execute console command | `/7dexec command:"say Hello"` |
 | `/7dwalkersim` | 🚶 Walker simulation | `/7dwalkersim enable:True` |
 | `/7dai` | 🤖 AI system control | `/7dai reload` |
+
+## 📖 **Detailed Command Reference**
+
+### 🔧 **Public Commands**
+- **`/7dhelp`** - Shows all available commands with descriptions
+- **`/7dinfo`** - Displays bot connection status and version info
+- **`/7dtime`** - Shows current game time and blood moon horde countdown
+- **`/7dversion`** - Displays game server version
+- **`/7dplayers`** - Lists all currently online players
+- **`/7dweather`** - Comprehensive weather report for all biomes
+- **`/7dregister code:123456`** - Links your Discord account to your game profile
+- **`/7dplayerinfo`** - Shows your registration details and play statistics
+
+### ⚡ **Admin Commands**
+- **`/7dkick player:Josh`** - Kicks a player from the server
+- **`/7dban player:Josh reason:Cheating`** - Bans a player (reason optional)
+- **`/7dunban player:Josh`** - Removes a ban from a player
+- **`/7dbanlist`** - Shows all currently banned players
+- **`/7dkill player:Josh`** - Kills a player with public announcement
+- **`/7dteleport player:Josh target:100,50,200`** - Teleports player to coordinates or another player
+- **`/7dgive player:Josh item:pistol quantity:1 quality:6`** - Gives items to a player
+- **`/7dwhitelist add|remove|list|enable|disable player:Josh`** - Manages server whitelist
+- **`/7dspawn entity type:zombieDog player:Josh count:5`** - Spawns zombies, animals, airdrops, or supply crates
+- **`/7dweathercontrol set type:storm`** - Controls weather conditions and temperature
+- **`/7dstatus next:True`** - Manages bot status and manually rotates status
+- **`/7dstatusrotate enable:True`** - Enables/disables automatic status rotation
+- **`/7dsetchannel channel:#game-chat`** - Sets the Discord channel for game chat
+- **`/7dsaveworld`** - Forces a world save
+- **`/7dexec command:"say Hello"`** - Executes raw console commands (if enabled)
+- **`/7dwalkersim enable:True`** - Manages walker simulation
+- **`/7dai reload`** - Controls AI system (reload, status, etc.)
+
+### 🎯 **Command Features**
+- **Autocomplete**: Player names auto-suggest for relevant commands
+- **Subcommands**: Complex commands like `/7dwhitelist` have multiple actions
+- **Parameter Validation**: Commands validate input ranges and formats
+- **Error Handling**: Graceful error messages for failed commands
+- **Admin Protection**: Admin commands restricted to Discord administrators
 
 ## 🎨 **Features**
 
