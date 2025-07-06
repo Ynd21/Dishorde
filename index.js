@@ -113,9 +113,6 @@ var telnet = new TelnetClient();
 // Initialize AI after config is loaded
 if (config) {
   aiIntegration = new AIIntegration(config);
-  if (aiIntegration.isEnabled()) {
-    console.log("🤖 AI Integration enabled with personality: " + config['ai-personality'].substring(0, 50) + "...");
-  }
 }
 
 // IP
@@ -879,13 +876,59 @@ var params = {
   debug: false,
 };
 
+// Status display functions
+function displayDiscordStatus() {
+  const channelInfo = channel ? 
+    `\x1b[32m#${channel.name} Configured\x1b[0m` : 
+    `\x1b[33mNot Configured\x1b[0m`;
+  
+  console.log(`\x1b[37mConnected to \x1b[1m${client.guilds.cache.size}\x1b[0m\x1b[37m Discord(s) and Logged in as \x1b[1m${client.user.tag}\x1b[0m\x1b[37m with ${channelInfo}\x1b[37m Channel\x1b[0m`);
+}
+
+function displayGameConnectionStatus() {
+  console.log(`\x1b[37mConnected to 7 Days To Die Server \x1b[1m${ip}:${port}\x1b[0m\x1b[37m at \x1b[1m${new Date().toLocaleString()}\x1b[0m`);
+  
+  displaySystemStatus();
+}
+
+function displaySystemStatus() {
+  // Build status array
+  const statusItems = [];
+  
+  // AI Integration
+  const aiEmoji = aiIntegration && aiIntegration.isEnabled() ? '✅' : '❌';
+  statusItems.push(`AI ${aiEmoji}`);
+  
+  // Database
+  const dbEmoji = db ? '✅' : '❌';
+  statusItems.push(`Database ${dbEmoji}`);
+  
+  // Status Rotation
+  const statusEmoji = global.statusRotation?.enabled ? '✅' : '❌';
+  statusItems.push(`Status Rotation ${statusEmoji}`);
+  
+  // Welcome Messages
+  const welcomeEmoji = config["enable-welcome-messages"] !== false ? '✅' : '❌';
+  statusItems.push(`Welcome Messages ${welcomeEmoji}`);
+  
+  // Chat Bridge
+  const chatEmoji = !config["disable-chatmsgs"] ? '✅' : '❌';
+  statusItems.push(`Chat Bridge ${chatEmoji}`);
+  
+  // Admin Commands
+  const execEmoji = config["allow-exec-command"] ? '⚠️' : '✅';
+  statusItems.push(`Exec Commands ${execEmoji}`);
+  
+  console.log(`\x1b[37mFunctions Checklist: ${statusItems.join(', ')}\x1b[0m\n`);
+}
+
 // If Discord auth is skipped, we have to connect now rather than waiting for the Discord client.
 if(config["skip-discord-auth"]) {
   telnet.connect(params);
 }
 
 telnet.on("ready", () => {
-  console.log("Connected to game. (" +  Date() + ")");
+  displayGameConnectionStatus();
 
   if(!config["skip-discord-auth"]) {
     updateStatus(1);
@@ -1034,16 +1077,24 @@ if(!config["skip-discord-auth"]) {
   doLogin();
 
   client.on("ready", () => {
+    // First, resolve the channel from cache
+    channel = client.channels.cache.find((channel) => (channel.id === channelid));
+
+    if(!channel && !skipChannelCheck) {
+      console.log("\x1b[33mERROR: Failed to identify channel with ID '" + channelid + "'\x1b[0m");
+      config.channel = "channelid";
+    }
+
     if(firstLogin !== 1) {
       firstLogin = 1;
-      console.log("Discord client connected successfully.");
+      displayDiscordStatus();
 
       // Set the initial status and begin the heartbeat timer.
       d7dtdState.connStatus = 0;
       d7dtdHeartbeat();
     }
     else {
-      console.log("Discord client re-connected successfully.");
+      console.log("\x1b[32m✅ Discord client re-connected successfully.\x1b[0m");
 
       // When the client reconnects, we have to re-establish the status.
       refreshDiscordStatus();
@@ -1056,13 +1107,6 @@ if(!config["skip-discord-auth"]) {
 
     if(client.guilds.cache.size > 1) {
       console.log("\x1b[31m********\nWARNING: The bot is currently in more than one Discord server. Please type 'leaveguilds' in the console to clear the bot from all guilds.\nIt is highly recommended that you verify 'Public bot' is UNCHECKED on this page:\n\x1b[1m https://discord.com/developers/applications/" + client.user.id + "/information \x1b[0m\n\x1b[31m********\x1b[0m");
-    }
-
-    channel = client.channels.cache.find((channel) => (channel.id === channelid));
-
-    if(!channel && !skipChannelCheck) {
-      console.log("\x1b[33mERROR: Failed to identify channel with ID '" + channelid + "'\x1b[0m");
-      config.channel = "channelid";
     }
 
     // Wait until the Discord client is ready before connecting to the game.
