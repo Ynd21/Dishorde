@@ -15,7 +15,7 @@ var intents = [
 ];
 const path = require('path');
 
-console.log("\x1b[7m# Dishorde (\x1b[0m\x1b[47m\x1b[31mRed Queen\x1b[0m\x1b[7m) v" + pjson.version + " #\x1b[0m \x1b[35m🚫 Do \x1b[1m\x1b[35mNOT\x1b[0m\x1b[35m Submit Tickets to Dishorde for Support\x1b[0m\n");
+console.log("\x1b[7m# Dishorde (\x1b[0m\x1b[47m\x1b[31mRed Queen\x1b[0m\x1b[7m) v" + pjson.version + " #\x1b[0m \x1b[35m🚫 Do \x1b[1m\x1b[35mNOT\x1b[0m\x1b[35m Submit Tickets to Dishorde for Support\x1b[0m");
 console.log("\x1b[33m⚠️  NOTICE: \x1b[0m\x1b[31mRunning this Discord Bot is at your \x1b[1m\x1b[31mOWN RISK\x1b[0m\x1b[31m. Has been modified outside of the scope of support for Dishorde.\x1b[0m");
 
 const lineSplit = /\n|\r/g;
